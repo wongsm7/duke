@@ -99,7 +99,20 @@ public class Duke {
                     System.out.println("Got it. I've added this task:");
                     System.out.println(d);
                     System.out.println("Now you have " + listOfTasks.size() + " tasks in the list.");
-                } else {
+                } else if(temp[0].equals("delete")) {
+                    if(temp.length < 2) {
+                        throw new DukeException("No index entered");
+                    }
+                    int index = Integer.parseInt(temp[1]) - 1;
+                    if(index < 0 || index >= listOfTasks.size()){
+                        throw new DukeException("Invalid index");
+                    }
+                    Task removed = listOfTasks.remove(index);
+                    System.out.println("Noted. I've removed this task:");
+                    System.out.println(removed);
+                    System.out.println("Now you have " + listOfTasks.size() + " tasks in the list.");
+                }
+                else {
                     throw new DukeException("I'm sorry, but I don't know what that means :-(");
                 }
             }
