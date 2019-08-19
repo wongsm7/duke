@@ -9,12 +9,6 @@ public class Task {
         this.isDone = false;
     }
 
-    public Task(String[] arr) {
-        this.isDone = false;
-        this.description = Arrays.toString(arr);
-        this.description = this.description.substring(1, this.description.length()-1).replaceAll(",", "");
-    }
-
     public String getStatusIcon() {
         return (isDone ? "\u2713" : "\u2718"); //return tick or X symbols
     }

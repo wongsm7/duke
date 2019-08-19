@@ -28,15 +28,70 @@ public class Duke {
                 }
             }
             else if(temp[0].equals("done")) {
-                listOfTasks.get(Integer.valueOf(temp[1]) - 1).setDone();
+                listOfTasks.get(Integer.parseInt(temp[1]) - 1).setDone();
                 System.out.println("Nice! I've marked this task as done:");
-                System.out.println(listOfTasks.get(Integer.valueOf(temp[1]) - 1));
+                System.out.println(listOfTasks.get(Integer.parseInt(temp[1]) - 1));
+            }
+            else if(temp[0].equals("todo")){
+                String temp2 = "";
+                for(int i = 1; i < temp.length; i++) {
+                    temp2 = temp2 + temp[i] + " ";
+                }
+                Todo t = new Todo(temp2);
+                listOfTasks.add(t);
+                System.out.println("Got it. I've added this task:");
+                System.out.println(t);
+                System.out.println("Now you have " + listOfTasks.size() + " tasks in the list.");
+            }
+            else if(temp[0].equals("event")){
+                String temp2 = "";
+                String time = "";
+                int index = 0;
+                for(int i = 1; i < temp.length; i++){
+                    if(temp[i].equals("/at")) {
+                        index = i + 1;
+                        break;
+                    }
+                    else{
+                        temp2 = temp2 + temp[i] + " ";
+                    }
+                }
+                for(int j = index; j < temp.length; j++){
+                    time = time + temp[j] + " ";
+                }
+                Event e = new Event(temp2,time);
+                listOfTasks.add(e);
+                System.out.println("Got it. I've added this task:");
+                System.out.println(e);
+                System.out.println("Now you have " + listOfTasks.size() + " tasks in the list.");
+            }
+            else if(temp[0].equals("deadline")){
+                String temp2 = "";
+                String time = "";
+                int index = 0;
+                for(int i = 1; i < temp.length; i++){
+                    if(temp[i].equals("/by")) {
+                        index = i + 1;
+                        break;
+                    }
+                    else{
+                        temp2 = temp2 + temp[i] + " ";
+                    }
+                }
+                for(int j = index; j < temp.length; j++){
+                    time = time + temp[j] + " ";
+                }
+                Deadline d = new Deadline(temp2,time);
+                listOfTasks.add(d);
+                System.out.println("Got it. I've added this task:");
+                System.out.println(d);
+                System.out.println("Now you have " + listOfTasks.size() + " tasks in the list.");
             }
             else {
                 String temp2 = Arrays.toString(temp);
                 temp2 = temp2.substring(1, temp2.length()-1).replaceAll(",", "");
                 System.out.println("added: " + String.join(",", temp2));
-                listOfTasks.add(new Task(temp));
+                listOfTasks.add(new Task(temp2));
             }
         }
     }
