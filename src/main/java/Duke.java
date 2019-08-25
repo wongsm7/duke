@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
-=======
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -17,7 +11,6 @@ import java.util.ArrayList;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
->>>>>>> branch-Level-8
 public class Duke {
     public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
     public static void main(String[] args) {
@@ -30,18 +23,12 @@ public class Duke {
         System.out.println("Hello! I'm Duke");
         System.out.println("What can I do for you?");
         Scanner sc = new Scanner(System.in);
-<<<<<<< HEAD
-        List<Task> listOfTasks = new ArrayList<>();
-        while(sc.hasNext()) {
-            try {
-=======
         while (sc.hasNext()) {
             try {
                 List<Task> listOfTasks = importTask();
->>>>>>> branch-Level-8
                 String[] temp = sc.nextLine().split(" ");
                 if (temp[0].equals("bye")) {
-                    if(temp.length > 1) {
+                    if (temp.length > 1) {
                         throw new DukeException("I'm sorry, but I don't know what that means :-(");
                     }
                     System.out.println("Bye. Hope to see you again soon!");
@@ -53,18 +40,19 @@ public class Duke {
                         count++;
                     }
                 } else if (temp[0].equals("done")) {
-                    if(temp.length < 2) {
+                    if (temp.length < 2) {
                         throw new DukeException("No task number entered");
                     }
                     int index = Integer.parseInt(temp[1]) - 1;
-                    if(index < 0 || index > listOfTasks.size() - 1){
+                    if (index < 0 || index > listOfTasks.size() - 1) {
                         throw new DukeException("Invalid task number");
                     }
                     listOfTasks.get(index).setDone();
                     System.out.println("Nice! I've marked this task as done:");
                     System.out.println(listOfTasks.get(index));
+                    writeToFile(listOfTasks);
                 } else if (temp[0].equals("todo")) {
-                    if(temp.length < 2) {
+                    if (temp.length < 2) {
                         throw new DukeException("The description of a todo cannot be empty.");
                     }
                     String temp2 = "";
@@ -76,8 +64,9 @@ public class Duke {
                     System.out.println("Got it. I've added this task:");
                     System.out.println(t);
                     System.out.println("Now you have " + listOfTasks.size() + " tasks in the list.");
+                    writeToFile(listOfTasks);
                 } else if (temp[0].equals("event")) {
-                    if(temp.length < 2) {
+                    if (temp.length < 2) {
                         throw new DukeException("The description of a event cannot be empty.");
                     }
                     String temp2 = "";
@@ -99,8 +88,9 @@ public class Duke {
                     System.out.println("Got it. I've added this task:");
                     System.out.println(e);
                     System.out.println("Now you have " + listOfTasks.size() + " tasks in the list.");
+                    writeToFile(listOfTasks);
                 } else if (temp[0].equals("deadline")) {
-                    if(temp.length < 2) {
+                    if (temp.length < 2) {
                         throw new DukeException("The description of a deadline cannot be empty.");
                     }
                     String temp2 = "";
@@ -123,27 +113,19 @@ public class Duke {
                     System.out.println("Got it. I've added this task:");
                     System.out.println(d);
                     System.out.println("Now you have " + listOfTasks.size() + " tasks in the list.");
-                } else if(temp[0].equals("delete")) {
-                    if(temp.length < 2) {
+                    writeToFile(listOfTasks);
+                } else if (temp[0].equals("delete")) {
+                    if (temp.length < 2) {
                         throw new DukeException("No index entered");
                     }
                     int index = Integer.parseInt(temp[1]) - 1;
-                    if(index < 0 || index >= listOfTasks.size()){
+                    if (index < 0 || index >= listOfTasks.size()) {
                         throw new DukeException("Invalid index");
                     }
                     Task removed = listOfTasks.remove(index);
                     System.out.println("Noted. I've removed this task:");
                     System.out.println(removed);
                     System.out.println("Now you have " + listOfTasks.size() + " tasks in the list.");
-<<<<<<< HEAD
-                }
-                else {
-                    throw new DukeException("I'm sorry, but I don't know what that means :-(");
-                }
-            }
-            catch(DukeException e){
-                System.out.println(e);
-=======
                     writeToFile(listOfTasks);
                 } else {
                     throw new DukeException("I'm sorry, but I don't know what that means :-(");
@@ -201,9 +183,10 @@ public class Duke {
                         + ((Event) t).getAt() + "\n";
             } else if (t.getType().equals("D")) {
                 output += t.getType() + "|" + t.getIsDone() + "|" + t.getDescription() + "|"
-                           + ((Deadline) t).getBy() + "\n";
->>>>>>> branch-Level-8
+                        + ((Deadline) t).getBy() + "\n";
             }
         }
+        pw.write(output);
+        pw.close();
     }
 }
