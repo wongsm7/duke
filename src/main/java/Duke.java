@@ -1,8 +1,25 @@
+<<<<<<< HEAD
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
+=======
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import java.time.format.DateTimeParseException;
+import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+>>>>>>> branch-Level-8
 public class Duke {
+    public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
     public static void main(String[] args) {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
@@ -13,9 +30,15 @@ public class Duke {
         System.out.println("Hello! I'm Duke");
         System.out.println("What can I do for you?");
         Scanner sc = new Scanner(System.in);
+<<<<<<< HEAD
         List<Task> listOfTasks = new ArrayList<>();
         while(sc.hasNext()) {
             try {
+=======
+        while (sc.hasNext()) {
+            try {
+                List<Task> listOfTasks = importTask();
+>>>>>>> branch-Level-8
                 String[] temp = sc.nextLine().split(" ");
                 if (temp[0].equals("bye")) {
                     if(temp.length > 1) {
@@ -94,7 +117,8 @@ public class Duke {
                     for (int j = index; j < temp.length; j++) {
                         time = time + temp[j] + " ";
                     }
-                    Deadline d = new Deadline(temp2, time);
+                    LocalDateTime dateTime = LocalDateTime.parse(time.trim(), dtf);
+                    Deadline d = new Deadline(temp2, dateTime);
                     listOfTasks.add(d);
                     System.out.println("Got it. I've added this task:");
                     System.out.println(d);
@@ -111,6 +135,7 @@ public class Duke {
                     System.out.println("Noted. I've removed this task:");
                     System.out.println(removed);
                     System.out.println("Now you have " + listOfTasks.size() + " tasks in the list.");
+<<<<<<< HEAD
                 }
                 else {
                     throw new DukeException("I'm sorry, but I don't know what that means :-(");
@@ -118,6 +143,66 @@ public class Duke {
             }
             catch(DukeException e){
                 System.out.println(e);
+=======
+                    writeToFile(listOfTasks);
+                } else {
+                    throw new DukeException("I'm sorry, but I don't know what that means :-(");
+                }
+            } catch (DukeException de) {
+                System.out.println(de);
+            } catch (IOException ie) {
+                System.out.println("IOException");
+            } catch (DateTimeParseException dtpe) {
+                System.out.println("Please enter deadline in dd/mm/yyyy HHmm format");
+            }
+        }
+    }
+
+    public static List<Task> importTask() throws FileNotFoundException{
+        List<Task> tempList = new ArrayList<>();
+        File file = new File("D:\\CS2103T\\duke\\docs\\duke.txt");
+        try {
+            Scanner fileScanner = new Scanner(file);
+            while (fileScanner.hasNextLine()) {
+                String[] token = fileScanner.nextLine().split("\\|");
+                if (token.length <= 2) {
+                    throw new DukeException("Invalid line");
+                }
+                if(token[0].equals("T")){
+                    tempList.add(new Todo(token[2], token[1]));
+                } else if(token[0].equals("D")) {
+                    tempList.add(new Deadline(token[2], token[1], LocalDateTime.parse(token[3], dtf)));
+                } else if(token[0].equals("E")){
+                    tempList.add(new Event(token[2], token[1], token[3]));
+                } else{
+                    throw new DukeException("Invalid task type");
+                }
+            }
+            return tempList;
+        }
+        catch(DukeException de){
+            System.out.println(de.getMessage());
+        }
+        catch(FileNotFoundException e){
+            System.out.println("File not found");
+        }
+        return tempList;
+    }
+
+    public static void writeToFile(List<Task> tasks) throws IOException, FileNotFoundException {
+        File file = new File("D:\\CS2103T\\duke\\docs\\duke.txt");
+        PrintWriter pw = new PrintWriter(file);
+        String output = "";
+        for (Task t : tasks) {
+            if (t.getType().equals("T")) {
+                output += t.getType() + "|" + t.getIsDone() + "|" + t.getDescription() + "\n";
+            } else if (t.getType().equals("E")) {
+                output += t.getType() + "|" + t.getIsDone() + "|" + t.getDescription() + "|"
+                        + ((Event) t).getAt() + "\n";
+            } else if (t.getType().equals("D")) {
+                output += t.getType() + "|" + t.getIsDone() + "|" + t.getDescription() + "|"
+                           + ((Deadline) t).getBy() + "\n";
+>>>>>>> branch-Level-8
             }
         }
     }

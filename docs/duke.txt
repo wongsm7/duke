@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 E|0|buy book |23/01/1996 1850
 E|0|buy thing |raffles 
 D|0|buy book |23/08/2359 2359
@@ -8,3 +9,8 @@ T|0|hello
 E|0|hello |marina 
 D|0|return book |2/12/2019 
 >>>>>>> 8a18e4687900ee9975fdd05620a3ab57d46b49c2
+=======
+E|0|buy book |23/01/1996 1850
+E|0|buy thing |raffles 
+D|0|buy book |23/08/2359 2359
+>>>>>>> branch-Level-8
