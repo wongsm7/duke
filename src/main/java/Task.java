@@ -4,6 +4,7 @@ public class Task {
     protected String description;
     protected boolean isDone;
     protected String type;
+
     protected final DateTimeFormatter OUT_DTF = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
 
     public Task(String description) {
