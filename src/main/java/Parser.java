@@ -60,14 +60,25 @@ public class Parser {
                 throw new DukeException("Please enter deadline in dd/mm/yyyy HHmm format");
             }
            return new AddCommand(new Deadline(temp2, dateTime));
-        } else if(temp[0].equals("bye")){
+        } else if(temp[0].equals("bye")) {
             return new ExitCommand();
-        } else if(temp[0].equals("done")){
+        } else if(temp[0].equals("done")) {
+            if(temp.length > 2) {
+                throw new DukeException("Invalid index given");
+            }
             return new DoneCommand(Integer.parseInt(temp[1]) - 1);
-        } else if(temp[0].equals("list")){
+        } else if(temp[0].equals("list")) {
             return new ListCommand();
-        } else if(temp[0].equals("delete")){
+        } else if(temp[0].equals("delete")) {
+            if(temp.length > 2) {
+                throw new DukeException("Invalid index given");
+            }
             return new DeleteCommand(Integer.parseInt(temp[1]) - 1);
+        } else if (temp[0].equals("find")) {
+            if(temp.length > 2) {
+                throw new DukeException("Invalid keyword given");
+            }
+            return new FindCommand(temp[1]);
         } else{
             throw new DukeException("I'm sorry, but I don't know what that means :-(");
         }
