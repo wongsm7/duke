@@ -68,8 +68,7 @@ public class Parser {
             return new ListCommand();
         } else if(temp[0].equals("delete")){
             return new DeleteCommand(Integer.parseInt(temp[1]) - 1);
-        }
-        else{
+        } else{
             throw new DukeException("I'm sorry, but I don't know what that means :-(");
         }
     }
