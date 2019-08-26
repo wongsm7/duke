@@ -1,16 +1,26 @@
 import java.io.IOException;
 
+/**
+ * A program that keeps track of a person's tasks.
+ */
 public class Duke {
     private Storage storage;
     private TaskList listOfTasks;
     private Ui ui;
 
+    /**
+     * Constructor for Duke.
+     * @param filePath a String representing the file path
+     */
     public Duke(String filePath) {
         ui = new Ui();
         storage = new Storage(filePath);
         listOfTasks = new TaskList(storage.load());
     }
 
+    /**
+     * Method to run the program
+     */
     public void run() {
         ui.showWelcome();
         boolean isExit = false;
@@ -28,6 +38,10 @@ public class Duke {
             }
         }
     }
+
+    /**
+     * Main method
+     */
     public static void main(String[] args) {
         new Duke("D:\\CS2103T\\duke\\docs\\duke.txt").run();
     }
