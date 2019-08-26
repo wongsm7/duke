@@ -40,8 +40,4 @@ public class Ui {
     public void println(Task task){
         System.out.print(task);
     }
-
-    public void showLoadingError() {
-        System.out.println("File can't be loaded");
-    }
 }

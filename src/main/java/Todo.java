@@ -5,7 +5,7 @@ public class Todo extends Task {
         this.type = "T";
     }
 
-    public Todo(String description, String done){
+    public Todo(String description, String done) {
         super(description, done);
         this.type = "T";
     }

@@ -7,7 +7,7 @@ public class DoneCommand extends Command {
     }
     @Override
     public void execute(TaskList listOfTasks, Ui ui, Storage storage) throws DukeException, IOException {
-        if (index < 0 || index > listOfTasks.getSize() - 1){
+        if (index < 0 || index > listOfTasks.getSize() - 1) {
             throw new DukeException("Invalid task number");
         }
         listOfTasks.getListOfTasks().get(index).setDone();

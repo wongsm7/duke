@@ -12,7 +12,7 @@ public class TaskList {
         this.listOfTasks = taskList;
     }
 
-    public Task deleteTask(int index) throws DukeException {
+    public Task removeTask(int index) throws DukeException {
         if (index < 0 || index >= listOfTasks.size()) {
             throw new DukeException("Invalid index");
         }
@@ -23,15 +23,11 @@ public class TaskList {
         listOfTasks.add(task);
     }
 
-    public Task removeTask(int index){
-        return listOfTasks.remove(index);
-    }
-
-    public List<Task> getListOfTasks(){
+    public List<Task> getListOfTasks() {
         return listOfTasks;
     }
 
-    public int getSize(){
+    public int getSize() {
         return listOfTasks.size();
     }
 }

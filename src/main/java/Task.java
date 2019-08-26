@@ -13,7 +13,7 @@ public class Task {
 
     public Task(String description, String done){
         this.description = description;
-        if(done.equals("1")) {
+        if (done.equals("1")) {
             this.isDone = true;
         } else {
             this.isDone = false;
