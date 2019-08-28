@@ -5,11 +5,17 @@ import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test class for testing Task class.
+ */
 public class TaskTest {
     private Storage storage;
     private Ui ui;
     private TaskList listOfTasks;
 
+    /**
+     * Tests setDone method of Task class.
+     */
     @Test
     public void setDoneTest() {
         Task t = new Task("buy book");
@@ -17,12 +23,18 @@ public class TaskTest {
         assertEquals("1", t.getIsDone());
     }
 
+    /**
+     * Tests getDescription method of Task class.
+     */
     @Test
     public void getDescriptionTest() {
         Task t = new Task("buy book");
         assertEquals("buy book", t.getDescription());
     }
 
+    /**
+     * Tests getType method of Task class.
+     */
     @Test
     public void getTypeTest() {
         Todo t  = new Todo("buy book");
