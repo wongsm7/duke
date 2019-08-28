@@ -21,7 +21,7 @@ public class TaskList {
         this.listOfTasks = taskList;
     }
 
-    public Task deleteTask(int index) throws DukeException {
+    public Task removeTask(int index) throws DukeException {
         if (index < 0 || index >= listOfTasks.size()) {
             throw new DukeException("Invalid index");
         }

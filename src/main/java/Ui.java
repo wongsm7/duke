@@ -63,7 +63,7 @@ public class Ui {
      * @param task to be printed
      */
     public void println(Task task){
-        System.out.print(task);
+        System.out.println(task);
     }
 
 }
