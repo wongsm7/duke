@@ -1,7 +1,7 @@
 import java.time.format.DateTimeFormatter;
 
 /**
- * Parent class for task
+ * Parent class for task.
  */
 public class Task {
     protected String description;
@@ -10,7 +10,7 @@ public class Task {
     protected final DateTimeFormatter OUT_DTF = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
 
     /**
-     * Constructor for Task
+     * Constructor for Task.
      * @param description The task description
      */
     public Task(String description) {
@@ -19,11 +19,11 @@ public class Task {
     }
 
     /**
-     * Constructor for Task
+     * Constructor for Task.
      * @param description The task description
      * @param done representing if the task is done
      */
-    public Task(String description, String done){
+    public Task(String description, String done) {
         this.description = description;
         if (done.equals("1")) {
             this.isDone = true;
@@ -33,24 +33,24 @@ public class Task {
     }
 
     /**
-     * Method to return tick of X symbols
+     * Method to return tick of X symbols.
      */
     public String getStatusIcon() {
         return (isDone ? "\u2713" : "\u2718"); //return tick or X symbols
     }
 
     /**
-     * Method to set a task done
+     * Method to set a task done.
      */
     public void setDone() {
         this.isDone = true;
     }
 
     /**
-     * Method to get the type of task
+     * Method to get the type of task.
      * @return A string representing the type of the task
      */
-    public String getType(){
+    public String getType() {
         return this.type;
     }
 
@@ -58,7 +58,7 @@ public class Task {
      * Method to return a string representing if the task is done
      * @return A string 0 or 1 representing if the task is done
      */
-    public String getIsDone(){
+    public String getIsDone() {
         if(isDone){
             return "1";
         }
@@ -68,15 +68,15 @@ public class Task {
     }
 
     /**
-     * Method to return the description of the task
+     * Method to return the description of the task.
      * @return A string representing the description
      */
-    public String getDescription(){
+    public String getDescription() {
         return this.description;
     }
 
     /**
-     * Override the toString method
+     * Override the toString method.
      */
     @Override
     public String toString() {

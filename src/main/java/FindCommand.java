@@ -1,20 +1,20 @@
 
 /**
- * Command to find tasks by keyword
+ * Command to find tasks by keyword.
  */
-public class FindCommand extends Command{
+public class FindCommand extends Command {
     private String find;
 
     /**
-     * Constructor for DeleteCommand
+     * Constructor for DeleteCommand.
      * @param find representing a string containing the keyword
      */
-    public FindCommand(String find){
+    public FindCommand(String find) {
         this.find = find;
     }
 
     /**
-     * Execute the find command
+     * Execute the find command.
      * @param listOfTasks the list of tasks
      * @param ui The ui which displays the output
      * @param storage the place that stores the tasks
@@ -38,10 +38,10 @@ public class FindCommand extends Command{
     }
 
     /**
-     * Method to know if it is an exit command
+     * Method to know if it is an exit command.
      * @return A boolean which states if it is an exit command
      */
-    public boolean isExit(){
+    public boolean isExit() {
         return false;
     }
 }

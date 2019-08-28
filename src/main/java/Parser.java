@@ -3,14 +3,14 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 /**
- * Deals with making sense of the user command
+ * Deals with making sense of the user command.
  */
 
 public class Parser {
     public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
 
     /**
-     * Method to parse input
+     * Method to parse input.
      * @param input which is the input string
      * @return A Command
      */
@@ -65,30 +65,30 @@ public class Parser {
             LocalDateTime dateTime = null;
             try {
                 dateTime = LocalDateTime.parse(time.trim(), dtf);
-            } catch (DateTimeParseException e){
+            } catch (DateTimeParseException e) {
                 throw new DukeException("Please enter deadline in dd/mm/yyyy HHmm format");
             }
-           return new AddCommand(new Deadline(temp2, dateTime));
-        } else if(temp[0].equals("bye")) {
+            return new AddCommand(new Deadline(temp2, dateTime));
+        } else if (temp[0].equals("bye")) {
             return new ExitCommand();
-        } else if(temp[0].equals("done")) {
-            if(temp.length > 2) {
+        } else if (temp[0].equals("done")) {
+            if (temp.length > 2) {
                 throw new DukeException("Invalid index given");
             }
             return new DoneCommand(Integer.parseInt(temp[1]) - 1);
-        } else if(temp[0].equals("list")) {
+        } else if (temp[0].equals("list")) {
             return new ListCommand();
-        } else if(temp[0].equals("delete")) {
-            if(temp.length > 2) {
+        } else if (temp[0].equals("delete")) {
+            if (temp.length > 2) {
                 throw new DukeException("Invalid index given");
             }
             return new DeleteCommand(Integer.parseInt(temp[1]) - 1);
         } else if (temp[0].equals("find")) {
-            if(temp.length > 2) {
+            if (temp.length > 2) {
                 throw new DukeException("Invalid keyword given");
             }
             return new FindCommand(temp[1]);
-        } else{
+        } else {
             throw new DukeException("I'm sorry, but I don't know what that means :-(");
         }
     }

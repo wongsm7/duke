@@ -19,7 +19,7 @@ public class Duke {
     }
 
     /**
-     * Method to run the program
+     * Method to run the program.
      */
     public void run() {
         ui.showWelcome();
@@ -40,7 +40,7 @@ public class Duke {
     }
 
     /**
-     * Main method
+     * Main method.
      */
     public static void main(String[] args) {
         new Duke("D:\\CS2103T\\duke\\docs\\duke.txt").run();

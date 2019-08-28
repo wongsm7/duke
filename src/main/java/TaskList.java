@@ -2,20 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Contains the task list
+ * Contains the task list.
  */
 public class TaskList {
     private List<Task> listOfTasks;
 
     /**
-     * Constructor for TaskList
+     * Constructor for TaskList.
      */
     public TaskList() {
         this.listOfTasks = new ArrayList<>();
     }
 
     /**
-     * Constructor for TaskList
+     * Constructor for TaskList.
      */
     public TaskList(List<Task> taskList) {
         this.listOfTasks = taskList;
@@ -29,7 +29,7 @@ public class TaskList {
     }
 
     /**
-     * Method to add a task
+     * Method to add a task.
      * @param task to be added
      */
     public void addTask(Task task) {
@@ -37,18 +37,18 @@ public class TaskList {
     }
 
     /**
-     * Method to get the list of tasks
+     * Method to get the list of tasks.
      * @return A list of tasks
      */
-    public List<Task> getListOfTasks(){
+    public List<Task> getListOfTasks() {
         return listOfTasks;
     }
 
     /**
-     * Method to get size of the list of tasks
+     * Method to get size of the list of tasks.
      * @return An int representing the size
      */
-    public int getSize(){
+    public int getSize() {
         return listOfTasks.size();
     }
 }

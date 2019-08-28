@@ -1,21 +1,21 @@
 import java.io.IOException;
 
 /**
- * Command to add tasks
+ * Command to add tasks.
  */
-public class AddCommand extends Command{
+public class AddCommand extends Command {
     private Task task;
 
     /**
-     * Constructor for AddCommand
+     * Constructor for AddCommand.
      * @param task A task to be added to the task list
      */
-    public AddCommand(Task task){
+    public AddCommand(Task task) {
         this.task = task;
     }
 
     /**
-     * Execute the add command
+     * Execute the add command.
      * @param listOfTasks the list of tasks to be added to
      * @param ui The ui which displays the output
      * @param storage to store the task
@@ -30,10 +30,10 @@ public class AddCommand extends Command{
     }
 
     /**
-     * Method to know if it is an exit command
+     * Method to know if it is an exit command.
      * @return A boolean which states if it is an exit command
      */
-    public boolean isExit(){
+    public boolean isExit() {
         return false;
     }
 }

@@ -8,7 +8,7 @@ public class TaskListTest {
     private TaskList listOfTasks;
 
     @Test
-    public void AddTaskTest() {
+    public void addTaskTest() {
         listOfTasks = new TaskList();
         listOfTasks.addTask(new Todo("todo buy bread"));
         assertEquals("todo buy bread", listOfTasks.getListOfTasks().get(0).getDescription());
@@ -16,7 +16,7 @@ public class TaskListTest {
     }
 
     @Test
-    public void RemoveTaskTest() throws DukeException {
+    public void removeTaskTest() throws DukeException {
         listOfTasks = new TaskList();
         listOfTasks.addTask(new Todo("todo buy bread"));
         listOfTasks.addTask(new Todo("todo buy butter"));

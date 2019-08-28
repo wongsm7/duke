@@ -1,20 +1,20 @@
 import java.util.Scanner;
 
 /**
- * Takes care of the Ui
+ * Takes care of the Ui.
  */
 public class Ui {
     private Scanner scanner;
 
     /**
-     * Constructor for Ui
+     * Constructor for Ui.
      */
     public Ui() {
         scanner = new Scanner(System.in);
     }
 
     /**
-     * Method to read the next line
+     * Method to read the next line.
      * @return A string representing the next line
      */
     public String readCommand() {
@@ -22,14 +22,14 @@ public class Ui {
     }
 
     /**
-     * Method to print out a line
+     * Method to print out a line.
      */
     public void showLine() {
         System.out.println("____________________________________________________________");
     }
 
     /**
-     * Method to display error
+     * Method to display error.
      * @param message which is the error message
      */
     public void showError(String message) {
@@ -37,7 +37,7 @@ public class Ui {
     }
 
     /**
-     * Method to display the welcome message
+     * Method to display the welcome message.
      */
     public void showWelcome() {
         String logo = " ____        _        \n"
@@ -51,15 +51,15 @@ public class Ui {
     }
 
     /**
-     * Method to print a message
+     * Method to print a message.
      * @param message to be printed
      */
-    public void println(String message){
+    public void println(String message) {
         System.out.println(message);
     }
 
     /**
-     * Method to print a task
+     * Method to print a task.
      * @param task to be printed
      */
     public void println(Task task){

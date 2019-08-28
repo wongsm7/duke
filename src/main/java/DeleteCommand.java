@@ -1,24 +1,25 @@
 import java.io.IOException;
 
 /**
- * Command to delete a task
+ * Command to delete a task.
  */
-public class DeleteCommand extends Command{
+public class DeleteCommand extends Command {
     private int index;
+
     /**
-     * Constructor for DeleteCommand
+     * Constructor for DeleteCommand.
      * @param index of the task in the task list
      */
-    public DeleteCommand(int index){
+    public DeleteCommand(int index) {
         this.index = index;
     }
 
     /**
-     * Execute the delete command
+     * Execute the delete command.
      * @param listOfTasks the list of tasks to be added to
      * @param ui The ui which displays the output
      * @param storage to store the task
-     * @throws DukeException, IOException if error
+     * @throws DukeException if error
      */
     @Override
     public void execute(TaskList listOfTasks, Ui ui, Storage storage) throws DukeException, IOException {
@@ -33,11 +34,11 @@ public class DeleteCommand extends Command{
     }
 
     /**
-     * Method to know if it is an exit command
+     * Method to know if it is an exit command.
      * @return A boolean which states if it is an exit command
      */
     @Override
-    public boolean isExit(){
+    public boolean isExit() {
         return false;
     }
 }

@@ -16,6 +16,7 @@ public class TaskTest {
         t.setDone();
         assertEquals("1", t.getIsDone());
     }
+
     @Test
     public void getDescriptionTest() {
         Task t = new Task("buy book");

@@ -1,10 +1,10 @@
 /**
- * Another type of task, todo
+ * Another type of task, todo.
  */
 public class Todo extends Task {
 
     /**
-     * Constructor for Todo
+     * Constructor for Todo.
      * @param description of the task
      */
     public Todo(String description) {
@@ -13,7 +13,7 @@ public class Todo extends Task {
     }
 
     /**
-     * Constructor for Todo
+     * Constructor for Todo.
      * @param description of the task
      * @param done representing if the task is done
      */
@@ -23,7 +23,7 @@ public class Todo extends Task {
     }
 
     /**
-     * Override the toString method
+     * Override the toString method.
      */
     @Override
     public String toString() {
