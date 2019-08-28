@@ -21,7 +21,7 @@ public class AddCommand extends Command{
      * @param storage to store the task
      */
     @Override
-    public void execute(TaskList listOfTasks, Ui ui, Storage storage) throws DukeException, IOException {
+    public void execute(TaskList listOfTasks, Ui ui, Storage storage) throws IOException {
         listOfTasks.addTask(task);
         ui.println("Got it. I've added this task:");
         ui.println(task);

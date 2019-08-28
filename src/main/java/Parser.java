@@ -82,7 +82,7 @@ public class Parser {
             if(temp.length > 2) {
                 throw new DukeException("Invalid index given");
             }
-            return new DeleteCommand(Integer.parseInt(temp[1]) - 1);
+            return new DeleteCommand(Integer.parseInt(temp[1]));
         } else if (temp[0].equals("find")) {
             if(temp.length > 2) {
                 throw new DukeException("Invalid keyword given");

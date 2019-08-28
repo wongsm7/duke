@@ -8,10 +8,9 @@ public class ExitCommand extends Command{
      * @param listOfTasks the list of tasks
      * @param ui The ui which displays the output
      * @param storage to store the task
-     * @throws DukeException if error
      */
     @Override
-    public void execute(TaskList listOfTasks, Ui ui, Storage storage) throws DukeException {
+    public void execute(TaskList listOfTasks, Ui ui, Storage storage) {
         ui.println("Bye. Hope to see you again soon!");
     }
 
