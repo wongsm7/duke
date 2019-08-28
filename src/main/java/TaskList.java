@@ -25,7 +25,7 @@ public class TaskList {
         if (index < 0 || index >= listOfTasks.size()) {
             throw new DukeException("Invalid index");
         }
-        return listOfTasks.remove(index - 1);
+        return listOfTasks.remove(index);
     }
 
     /**

@@ -1,3 +1,2 @@
-D|1|buy book |23/08/1996 1800
-T|0|sadasd 
-E|0|go home |home 
+T|1|dadsad 
+T|1|dsadsad 
