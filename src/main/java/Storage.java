@@ -9,14 +9,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Takes care of storing the tasks
+ */
 public class Storage {
     private String filePath;
     public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
 
+    /**
+     * Constructor for Storage
+     */
     public Storage(String filePath){
         this.filePath = filePath;
     }
 
+    /**
+     * Method to load tasks from the file
+     * @return A List<Task> which has tasks loaded from the file
+     */
     public List<Task> load() {
         List<Task> tempList = new ArrayList<>();
         File file = new File(filePath);
@@ -48,6 +58,10 @@ public class Storage {
         return tempList;
     }
 
+    /**
+     * Method to write to the file
+     * @param tasks a list of tasks to be written to the file
+     */
     public void writeToFile(List<Task> tasks) throws IOException {
         File file = new File(filePath);
         PrintWriter pw = new PrintWriter(file);

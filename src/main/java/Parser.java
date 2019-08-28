@@ -2,9 +2,18 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
+/**
+ * Deals with making sense of the user command
+ */
+
 public class Parser {
     public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
 
+    /**
+     * Method to parse input
+     * @param input which is the input string
+     * @return A Command
+     */
     public static Command parse(String input) throws DukeException {
         String[] temp = input.split(" ");
         if (temp[0].equals("todo")) {
