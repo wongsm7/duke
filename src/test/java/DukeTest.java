@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DukeTest {
@@ -10,7 +8,7 @@ public class DukeTest {
     private TaskList listOfTasks;
 
     @Test
-    public void TaskListTest(){
+    public void TaskListTest() throws DukeException {
         listOfTasks = new TaskList();
         listOfTasks.addTask(new Todo("todo buy bread"));
         assertEquals("todo buy bread", listOfTasks.getListOfTasks().get(0).getDescription());
