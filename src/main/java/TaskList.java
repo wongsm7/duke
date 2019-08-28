@@ -21,12 +21,7 @@ public class TaskList {
         this.listOfTasks = taskList;
     }
 
-    /**
-     * Method to delete a task
-     * @param index of the task
-     * @return A Task which was deleted
-     */
-    public Task removeTask(int index) throws DukeException {
+    public Task deleteTask(int index) throws DukeException {
         if (index < 0 || index >= listOfTasks.size()) {
             throw new DukeException("Invalid index");
         }
@@ -48,7 +43,6 @@ public class TaskList {
     public List<Task> getListOfTasks(){
         return listOfTasks;
     }
-
 
     /**
      * Method to get size of the list of tasks
