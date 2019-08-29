@@ -7,10 +7,11 @@ public class Task {
     protected String description;
     protected boolean isDone;
     protected String type;
-    protected final DateTimeFormatter OUT_DTF = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
+    protected static final DateTimeFormatter OUT_DTF = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
 
     /**
      * Constructor for Task.
+     *
      * @param description The task description
      */
     public Task(String description) {
@@ -20,8 +21,9 @@ public class Task {
 
     /**
      * Constructor for Task.
+     *
      * @param description The task description
-     * @param done representing if the task is done
+     * @param done        representing if the task is done
      */
     public Task(String description, String done) {
         this.description = description;
@@ -48,6 +50,7 @@ public class Task {
 
     /**
      * Method to get the type of task.
+     *
      * @return A string representing the type of the task
      */
     public String getType() {
@@ -55,20 +58,21 @@ public class Task {
     }
 
     /**
-     * Method to return a string representing if the task is done
+     * Method to return a string representing if the task is done.
+     *
      * @return A string 0 or 1 representing if the task is done
      */
     public String getIsDone() {
-        if(isDone){
+        if (isDone) {
             return "1";
-        }
-        else{
+        } else {
             return "0";
         }
     }
 
     /**
      * Method to return the description of the task.
+     *
      * @return A string representing the description
      */
     public String getDescription() {

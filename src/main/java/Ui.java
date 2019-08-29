@@ -15,6 +15,7 @@ public class Ui {
 
     /**
      * Method to read the next line.
+     *
      * @return A string representing the next line
      */
     public String readCommand() {
@@ -30,6 +31,7 @@ public class Ui {
 
     /**
      * Method to display error.
+     *
      * @param message which is the error message
      */
     public void showError(String message) {
@@ -52,6 +54,7 @@ public class Ui {
 
     /**
      * Method to print a message.
+     *
      * @param message to be printed
      */
     public void println(String message) {
@@ -60,9 +63,10 @@ public class Ui {
 
     /**
      * Method to print a task.
+     *
      * @param task to be printed
      */
-    public void println(Task task){
+    public void println(Task task) {
         System.out.println(task);
     }
 

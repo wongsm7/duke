@@ -21,6 +21,11 @@ public class TaskList {
         this.listOfTasks = taskList;
     }
 
+    /**
+     * Method to remove task from task list.
+     * @param index of the task
+     * @throws DukeException if error
+     */
     public Task removeTask(int index) throws DukeException {
         if (index < 0 || index >= listOfTasks.size()) {
             throw new DukeException("Invalid index");

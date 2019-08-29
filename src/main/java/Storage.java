@@ -18,14 +18,16 @@ public class Storage {
 
     /**
      * Constructor for Storage.
+     * @param filePath representing a string for file path
      */
-    public Storage(String filePath){
+    public Storage(String filePath) {
         this.filePath = filePath;
     }
 
     /**
      * Method to load tasks from the file.
-     * @return A List<Task> which has tasks loaded from the file
+     *
+     * @return A task list which has tasks loaded from the file
      */
     public List<Task> load() {
         List<Task> tempList = new ArrayList<>();
@@ -48,11 +50,9 @@ public class Storage {
                 }
             }
             return tempList;
-        }
-        catch(DukeException de){
+        } catch (DukeException de) {
             System.out.println(de);
-        }
-        catch(IOException ie){
+        } catch (IOException ie) {
             System.out.println("IOException");
         }
         return tempList;
@@ -60,6 +60,7 @@ public class Storage {
 
     /**
      * Method to write to the file.
+     *
      * @param tasks a list of tasks to be written to the file
      */
     public void writeToFile(List<Task> tasks) throws IOException {

@@ -7,6 +7,7 @@ public class FindCommand extends Command {
 
     /**
      * Constructor for DeleteCommand.
+     *
      * @param find representing a string containing the keyword
      */
     public FindCommand(String find) {
@@ -15,10 +16,11 @@ public class FindCommand extends Command {
 
     /**
      * Execute the find command.
+     *
      * @param listOfTasks the list of tasks
-     * @param ui The ui which displays the output
-     * @param storage the place that stores the tasks
-     * @throws DukeException, IOException if error
+     * @param ui          The ui which displays the output
+     * @param storage     the place that stores the tasks
+     * @throws DukeException if error
      */
     @Override
     public void execute(TaskList listOfTasks, Ui ui, Storage storage) throws DukeException {
@@ -26,7 +28,7 @@ public class FindCommand extends Command {
         ui.println(" Here are the matching tasks in your list:");
         int count = 0;
         for (Task t : listOfTasks.getListOfTasks()) {
-            if(t.getDescription().contains(find)) {
+            if (t.getDescription().contains(find)) {
                 ui.println(t);
                 count++;
             }
@@ -39,6 +41,7 @@ public class FindCommand extends Command {
 
     /**
      * Method to know if it is an exit command.
+     *
      * @return A boolean which states if it is an exit command
      */
     public boolean isExit() {

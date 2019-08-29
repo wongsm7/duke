@@ -17,7 +17,7 @@ public class Todo extends Task {
      * @param description of the task
      * @param done representing if the task is done
      */
-    public Todo(String description, String done){
+    public Todo(String description, String done) {
         super(description, done);
         this.type = "T";
     }
