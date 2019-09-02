@@ -5,6 +5,7 @@ import java.util.Scanner;
  */
 public class Ui {
     private Scanner scanner;
+    private String currentMessage;
 
     /**
      * Constructor for Ui.
@@ -26,7 +27,7 @@ public class Ui {
      * Method to print out a line.
      */
     public void showLine() {
-        System.out.println("____________________________________________________________");
+        println("____________________________________________________________");
     }
 
     /**
@@ -36,6 +37,8 @@ public class Ui {
      */
     public void showError(String message) {
         System.out.println(message);
+        currentMessage += message + "\n";
+
     }
 
     /**
@@ -52,13 +55,22 @@ public class Ui {
         System.out.println("What can I do for you?");
     }
 
+    public static String getWelcomeMessage() {
+        return "Hello! I'm Duke\n" + "What can I do for you?";
+    }
+
     /**
      * Method to print a message.
      *
      * @param message to be printed
      */
     public void println(String message) {
+        currentMessage += message + "\n";
         System.out.println(message);
+    }
+
+    public String dumbMessage() {
+        return "dumb";
     }
 
     /**
@@ -68,6 +80,13 @@ public class Ui {
      */
     public void println(Task task) {
         System.out.println(task);
+        currentMessage += task.toString() + "\n";
+    }
+
+    public String getMessage(){
+        String temp = currentMessage;
+        currentMessage = "";
+        return temp;
     }
 
 }
