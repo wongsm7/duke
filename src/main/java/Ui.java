@@ -11,6 +11,7 @@ public class Ui {
      * Constructor for Ui.
      */
     public Ui() {
+        currentMessage = "";
         scanner = new Scanner(System.in);
     }
 
@@ -69,10 +70,6 @@ public class Ui {
         System.out.println(message);
     }
 
-    public String dumbMessage() {
-        return "dumb";
-    }
-
     /**
      * Method to print a task.
      *
@@ -83,6 +80,11 @@ public class Ui {
         currentMessage += task.toString() + "\n";
     }
 
+    /**
+     * Method to get the current message to be printed
+     *
+     * @return A string representing the current message
+     */
     public String getMessage(){
         String temp = currentMessage;
         currentMessage = "";

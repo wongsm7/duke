@@ -61,7 +61,7 @@ public class Duke extends Application {
      * Main method.
      */
     public static void main(String[] args) {
-        new Duke("D:\\CS2103T\\duke\\docs\\duke.txt").run();
+        new Duke("docs/duke.txt").run();
     }
 
     @Override

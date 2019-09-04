@@ -79,12 +79,12 @@ public class Parser {
         } else if (temp[0].equals("list")) {
             return new ListCommand();
         } else if (temp[0].equals("delete")) {
-            if (temp.length > 2) {
+            if (temp.length > 2 || temp.length == 1) {
                 throw new DukeException("Invalid index given");
             }
             return new DeleteCommand(Integer.parseInt(temp[1]) - 1);
         } else if (temp[0].equals("find")) {
-            if (temp.length > 2) {
+            if (temp.length > 2 || temp.length == 1) {
                 throw new DukeException("Invalid keyword given");
             }
             return new FindCommand(temp[1]);
