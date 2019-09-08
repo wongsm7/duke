@@ -15,6 +15,7 @@ public class Parser {
      * @return A Command
      */
     public static Command parse(String input) throws DukeException {
+        assert input != null;
         String[] temp = input.split(" ");
         if (temp[0].equals("todo")) {
             if (temp.length < 2) {
