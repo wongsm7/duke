@@ -8,6 +8,7 @@ public class DeleteCommand extends Command {
 
     /**
      * Constructor for DeleteCommand.
+     *
      * @param index of the task in the task list
      */
     public DeleteCommand(int index) {
@@ -16,9 +17,10 @@ public class DeleteCommand extends Command {
 
     /**
      * Execute the delete command.
+     *
      * @param listOfTasks the list of tasks to be added to
-     * @param ui The ui which displays the output
-     * @param storage to store the task
+     * @param ui          The ui which displays the output
+     * @param storage     to store the task
      * @throws DukeException if error
      */
     @Override
@@ -35,6 +37,7 @@ public class DeleteCommand extends Command {
 
     /**
      * Method to know if it is an exit command.
+     *
      * @return A boolean which states if it is an exit command
      */
     @Override

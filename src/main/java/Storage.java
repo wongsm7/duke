@@ -18,6 +18,7 @@ public class Storage {
 
     /**
      * Constructor for Storage.
+     *
      * @param filePath representing a string for file path
      */
     public Storage(String filePath) {

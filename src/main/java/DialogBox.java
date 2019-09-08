@@ -27,7 +27,7 @@ public class DialogBox extends HBox {
      * Constructor for DialogBox.
      *
      * @param text A String for the dialog
-     * @param img An Image for the dialog
+     * @param img  An Image for the dialog
      */
     private DialogBox(String text, Image img) {
         try {
@@ -57,7 +57,7 @@ public class DialogBox extends HBox {
      * A method to get the user dialog.
      *
      * @param text A String for the user dialog
-     * @param img An Image for the user dialog
+     * @param img  An Image for the user dialog
      * @return The user dialog
      */
     public static DialogBox getUserDialog(String text, Image img) {
@@ -68,7 +68,7 @@ public class DialogBox extends HBox {
      * A method to get the Duke dialog.
      *
      * @param text A String for Duke
-     * @param img An Image of Duke
+     * @param img  An Image of Duke
      * @return Instance of a dialog box for Duke
      */
     public static DialogBox getDukeDialog(String text, Image img) {

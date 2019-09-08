@@ -7,8 +7,9 @@ public class Event extends Task {
 
     /**
      * Constructor for Event.
+     *
      * @param description representing the task description
-     * @param at representing the location
+     * @param at          representing the location
      */
     public Event(String description, String at) {
         super(description);
@@ -18,9 +19,10 @@ public class Event extends Task {
 
     /**
      * Constructor for Deadline.
+     *
      * @param description representing the task description
-     * @param done representing if the task is done
-     * @param at representing the place
+     * @param done        representing if the task is done
+     * @param at          representing the place
      */
     public Event(String description, String done, String at) {
         super(description, done);
@@ -30,6 +32,7 @@ public class Event extends Task {
 
     /**
      * Method to return the location.
+     *
      * @return A String which represents the location
      */
     public String getAt() {

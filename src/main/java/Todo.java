@@ -5,6 +5,7 @@ public class Todo extends Task {
 
     /**
      * Constructor for Todo.
+     *
      * @param description of the task
      */
     public Todo(String description) {
@@ -14,8 +15,9 @@ public class Todo extends Task {
 
     /**
      * Constructor for Todo.
+     *
      * @param description of the task
-     * @param done representing if the task is done
+     * @param done        representing if the task is done
      */
     public Todo(String description, String done) {
         super(description, done);

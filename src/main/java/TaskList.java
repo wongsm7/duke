@@ -23,6 +23,7 @@ public class TaskList {
 
     /**
      * Method to remove task from task list.
+     *
      * @param index of the task
      * @throws DukeException if error
      */
@@ -35,6 +36,7 @@ public class TaskList {
 
     /**
      * Method to add a task.
+     *
      * @param task to be added
      */
     public void addTask(Task task) {
@@ -43,6 +45,7 @@ public class TaskList {
 
     /**
      * Method to get the list of tasks.
+     *
      * @return A list of tasks
      */
     public List<Task> getListOfTasks() {
@@ -51,6 +54,7 @@ public class TaskList {
 
     /**
      * Method to get size of the list of tasks.
+     *
      * @return An int representing the size
      */
     public int getSize() {

@@ -9,8 +9,9 @@ public class Deadline extends Task {
 
     /**
      * Constructor for Deadline.
+     *
      * @param description representing the task description
-     * @param by representing the time of the dateline
+     * @param by          representing the time of the dateline
      */
     public Deadline(String description, LocalDateTime by) {
         super(description);
@@ -20,9 +21,10 @@ public class Deadline extends Task {
 
     /**
      * Constructor for Deadline.
+     *
      * @param description representing the task description
-     * @param done representing if the task is done
-     * @param by representing the time of the deadline
+     * @param done        representing if the task is done
+     * @param by          representing the time of the deadline
      */
     public Deadline(String description, String done, LocalDateTime by) {
         super(description, done);
@@ -32,6 +34,7 @@ public class Deadline extends Task {
 
     /**
      * Method to return the deadline time.
+     *
      * @return A String which represents the time
      */
     public String getBy() {
