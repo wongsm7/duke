@@ -57,7 +57,7 @@ public class Ui {
     }
 
     public static String getWelcomeMessage() {
-        return "Hello! I'm Duke\n" + "What can I do for you?";
+        return "Hello! I'm Duke\n" + "What can I do for you?\n" + "Enter help for commands";
     }
 
     /**

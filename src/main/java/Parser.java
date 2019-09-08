@@ -90,7 +90,10 @@ public class Parser {
                 throw new DukeException("Invalid keyword given");
             }
             return new FindCommand(temp[1]);
-        } else {
+        } else if (temp[0].equals("help")) {
+            return new HelpCommand();
+        }
+        else {
             throw new DukeException("I'm sorry, but I don't know what that means :-(");
         }
     }
