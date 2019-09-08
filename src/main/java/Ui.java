@@ -85,7 +85,7 @@ public class Ui {
      *
      * @return A string representing the current message
      */
-    public String getMessage(){
+    public String getMessage() {
         String temp = currentMessage;
         currentMessage = "";
         return temp;
