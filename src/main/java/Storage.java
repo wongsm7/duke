@@ -45,7 +45,7 @@ public class Storage {
                 } else if (token[0].equals("D")) {
                     tempList.add(new Deadline(token[2], token[1], LocalDateTime.parse(token[3], dtf)));
                 } else if (token[0].equals("E")) {
-                    tempList.add(new Event(token[2], token[1], token[3]));
+                    tempList.add(new Event(token[2], token[1], LocalDateTime.parse(token[3], dtf)));
                 } else {
                     throw new DukeException("Invalid task type");
                 }

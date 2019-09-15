@@ -45,7 +45,13 @@ public class Parser {
             for (int j = index; j < temp.length; j++) {
                 time = time + temp[j] + " ";
             }
-            return new AddCommand(new Event(temp2, time));
+            LocalDateTime dateTime = null;
+            try {
+                dateTime = LocalDateTime.parse(time.trim(), dtf);
+            } catch (DateTimeParseException e) {
+                throw new DukeException("Please enter event in dd/mm/yyyy HHmm format");
+            }
+            return new AddCommand(new Event(temp2, dateTime));
         } else if (temp[0].equals("deadline")) {
             if (temp.length <= 2) {
                 throw new DukeException("The description of a deadline cannot be empty.");

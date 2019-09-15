@@ -1,9 +1,11 @@
+import java.time.LocalDateTime;
+
 /**
  * Event type of task.
  */
 public class Event extends Task {
 
-    protected String at;
+    protected LocalDateTime at;
 
     /**
      * Constructor for Event.
@@ -11,7 +13,7 @@ public class Event extends Task {
      * @param description representing the task description
      * @param at          representing the location
      */
-    public Event(String description, String at) {
+    public Event(String description, LocalDateTime at) {
         super(description);
         this.at = at;
         this.type = "E";
@@ -24,7 +26,7 @@ public class Event extends Task {
      * @param done        representing if the task is done
      * @param at          representing the place
      */
-    public Event(String description, String done, String at) {
+    public Event(String description, String done, LocalDateTime at) {
         super(description, done);
         this.at = at;
         this.type = "E";
@@ -36,7 +38,7 @@ public class Event extends Task {
      * @return A String which represents the location
      */
     public String getAt() {
-        return this.at;
+        return at.format(OUT_DTF);
     }
 
     /**
@@ -44,6 +46,6 @@ public class Event extends Task {
      */
     @Override
     public String toString() {
-        return "[E]" + super.toString() + " (at: " + at + ")";
+        return "[E]" + super.toString() + " (at: " + at.format(OUT_DTF) + ")";
     }
 }
