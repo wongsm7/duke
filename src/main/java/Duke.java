@@ -15,7 +15,7 @@ public class Duke {
      *
      * @param filePath a String representing the file path
      */
-    public Duke(String filePath) {
+    public Duke(String filePath) throws IOException {
         ui = new Ui();
         storage = new Storage(filePath);
         listOfTasks = new TaskList(storage.load());
@@ -45,8 +45,8 @@ public class Duke {
     /**
      * Main method.
      */
-    public static void main(String[] args) {
-        new Duke("docs/duke.txt").run();
+    public static void main(String[] args) throws IOException {
+        new Duke("duke.txt").run();
     }
 
     /**

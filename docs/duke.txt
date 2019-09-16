@@ -1,4 +1,2 @@
-T|0|buy bread 
-E|1|project meeting |02/12/2019 1800
-D|1|return book |05/12/2019 1300
-T|1|join sports club 
+T|0|buy book 
+T|0|read book 

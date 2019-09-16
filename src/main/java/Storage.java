@@ -1,6 +1,8 @@
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -30,9 +32,13 @@ public class Storage {
      *
      * @return A task list which has tasks loaded from the file
      */
-    public List<Task> load() {
+    public List<Task> load() throws IOException {
         List<Task> tempList = new ArrayList<>();
         File file = new File(filePath);
+        Path path = Paths.get(filePath);
+        if (path.getParent() != null) {
+            Files.createDirectories(path.getParent().getFileName());
+        }
         try {
             Scanner fileScanner = new Scanner(file);
             while (fileScanner.hasNextLine()) {
@@ -65,8 +71,11 @@ public class Storage {
      * @param tasks a list of tasks to be written to the file
      */
     public void writeToFile(List<Task> tasks) throws IOException {
-        File file = new File(filePath);
-        PrintWriter pw = new PrintWriter(file);
+        FileWriter pw = new FileWriter(filePath);
+        Path path = Paths.get(filePath);
+        if (path.getParent() != null) {
+            Files.createDirectories(path.getParent().getFileName());
+        }
         String output = "";
         for (Task t : tasks) {
             if (t.getType().equals("T")) {
