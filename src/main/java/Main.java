@@ -16,14 +16,6 @@ public class Main extends Application {
 
     private Duke duke;
 
-    {
-        try {
-            duke = new Duke("duke.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public void start(Stage stage) {
         try {
@@ -31,6 +23,11 @@ public class Main extends Application {
             AnchorPane ap = fxmlLoader.load();
             Scene scene = new Scene(ap);
             stage.setScene(scene);
+            try {
+                duke = new Duke("duke.txt");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             fxmlLoader.<MainWindow>getController().setDuke(duke);
             stage.setTitle("Duke");
             stage.show();
