@@ -12,13 +12,13 @@ checkstyle {
 
 shadowJar {
     archiveBaseName.set("duke")
-    archiveVersion.set("v0.2")
+    archiveVersion.set("v0.3")
     archiveClassifier.set(null)
     archiveAppendix.set(null)
 }
 
 group 'duke'
-version '0.2'
+version '0.3'
 
 repositories {
     mavenCentral()
